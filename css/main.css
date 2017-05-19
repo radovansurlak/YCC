@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300");
+html {
+  font-size: 120%;
+  font-family: "Source Sans Pro", sans-serif; }
+
+main {
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100vh; }
+  main h1 {
+    position: relative;
+    top: 30%;
+    text-transform: capitalize; }
+
+#menu {
+  display: flex;
+  width: 60vw;
+  background: gray;
+  margin: 0 auto; }
+  #menu ul {
+    padding: 0;
+    background: blue;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none; }
+    #menu ul li {
+      display: inline-block;
+      text-transform: capitalize; }
+
+/*# sourceMappingURL=main.css.map */

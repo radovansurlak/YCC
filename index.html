@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="https://unpkg.com/vue"></script>
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+      <main>
+
+        <nav id="menu">
+            <ul>
+              <li v-for="menuItem in leftSide">{{menuItem}}</li>
+              <img src="img/logo.png">
+              <li v-for="menuItem in rightSide">{{menuItem}}</li>
+            </ul>
+        </nav>
+
+        <script>
+            var app = new Vue({
+                el: '#menu',
+                data: {
+                    leftSide: ["home","sessions"],
+                    rightSide: ["blog","contact"]
+                }
+            });
+        </script>
+
+        <h1>uncover local music gems</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+      </main>
+
+
+
+
+
+
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
