@@ -10,16 +10,18 @@
         <script src="https://unpkg.com/vue"></script>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
-      <main>
 
-        <nav id="menu">
-            <ul>
-              <li v-for="menuItem in leftSide">{{menuItem}}</li>
-              <img src="img/logo.png">
-              <li v-for="menuItem in rightSide">{{menuItem}}</li>
-            </ul>
-        </nav>
+    <body>
+
+      <nav id="menu">
+          <ul>
+            <li v-for="menuItem in leftSide">{{menuItem}}</li>
+            <img src="img/logo.png">
+            <li v-for="menuItem in rightSide">{{menuItem}}</li>
+          </ul>
+      </nav>
+
+      <main>
 
         <script>
             var app = new Vue({
@@ -35,6 +37,36 @@
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
       </main>
+
+      <section id="recent-sessions">
+        <h2>recent sessions</h2>
+
+        <article>
+
+        <aside>
+
+          <iframe id="ytplayer" type="text/html" width="50%" height="360"
+          src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&modestbranding=2&controls=0&showinfo=0"
+          frameborder="0">
+          </iframe>
+
+
+
+
+          <div class="genre-bar">
+            jazz
+          </div>
+
+        </article>
+
+      </aside>
+
+
+
+
+
+
+      </section>
 
 
 
