@@ -9,6 +9,7 @@
 
         <script src="https://unpkg.com/vue"></script>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
@@ -23,9 +24,9 @@
 
       <nav id="menu">
           <ul>
-            <li v-for="menuItem in leftSide">{{menuItem.title}}</li>
+            <li v-for="menuItem in leftSide"><a :href="menuItem.address">{{menuItem.title}}</a></li>
             <img src="img/logo.png">
-            <li v-for="menuItem in rightSide">{{menuItem.title}}</li>
+            <li v-for="menuItem in rightSide"><a :href="menuItem.address">{{menuItem.title}}</a></li>
           </ul>
       </nav>
 
@@ -95,7 +96,7 @@
           echo '<aside>';
           echo '<div class="genre-bar-container">';
           foreach ($genres as $genre) {
-            echo $genre['name'];
+            echo "<h5>{$genre['name']}</h5>";
           }
           echo '</div>';
 
@@ -107,38 +108,11 @@
 
         ?>
 
-
-
-      <article>
-
-        <iframe id="ytplayer" type="text/html" width="50%" height="360"
-        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&modestbranding=2&controls=0&showinfo=0"
-        frameborder="0">
-        </iframe>
-
-        <aside>
-
-        <div class="genre-bar-container">
-          <h5>jazz</h5>
-          <h5>jazz</h5>
-          <h5>jazz</h5>
-        </div>
-
-        <h3>tanya</h3>
-        <h4>Sing with me</h4>
-
-        <a href="#">read more</a>
-
-
-      </aside>
-
-    </article>
-
   </section>
 
   <section id="newsletter">
 
-    <h2>unlock your access to exclusive secret live sessions</h2>
+    <h2>unlock your access to exclusive live sessions</h2>
 
     <form method="post">
       <input type="text" name="firstName" value="First Name">
@@ -178,6 +152,54 @@
 
 
   </section>
+
+  <footer>
+
+    <nav>
+        <ul id="footer-nav">
+          <li v-for="item in menuItems"><a :href="item.address">{{item.title}}</a></li>
+        </ul>
+    </nav>
+
+    <aside id="social-icons-bar">
+
+      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+    </aside>
+
+  </footer>
+
+  <script>
+      var app = new Vue({
+          el: '#footer-nav',
+          data: {
+            menuItems: [
+              {
+                title: "home",
+                address: "#"
+              }
+              ,
+              {
+                title: "sessions",
+                address: "#"
+              }
+              ,
+              {
+                title: "blog",
+                address: "#"
+              }
+              ,
+              {
+                title: "contact",
+                address: "#"
+              }
+            ]
+
+          }
+      });
+  </script>
 
 
 

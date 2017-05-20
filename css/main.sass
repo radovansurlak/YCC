@@ -2,9 +2,20 @@
 
 $screen-width: 50vw
 
+*
+  margin: 0
+  padding: 0
+a
+  text-decoration: none
+  color: unset
+
 html
   font-size: 120%
   font-family: "Source Sans Pro", sans-serif
+ul
+  list-style: none
+li
+  display: inline-block
 
 
 
@@ -109,3 +120,21 @@ section
     background: yellow
     img
       width: 100%
+
+footer
+  background: gray
+  display: flex
+  align-items: center
+  flex-direction: column
+  text-transform: capitalize
+  #footer-nav
+    background: orange
+    width: 50vw
+    display: flex
+    justify-content: space-between
+  #social-icons-bar
+    display: flex
+    width: 30%
+    justify-content: space-around
+    font-size: 5vw
+    color: white

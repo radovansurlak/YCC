@@ -1,7 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400");
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: unset; }
+
 html {
   font-size: 120%;
   font-family: "Source Sans Pro", sans-serif; }
+
+ul {
+  list-style: none; }
+
+li {
+  display: inline-block; }
 
 main {
   background-image: url("../img/bg.jpg");
@@ -102,5 +116,23 @@ section {
   background: yellow; }
   #blog-posts article img {
     width: 100%; }
+
+footer {
+  background: gray;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-transform: capitalize; }
+  footer #footer-nav {
+    background: orange;
+    width: 50vw;
+    display: flex;
+    justify-content: space-between; }
+  footer #social-icons-bar {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    font-size: 5vw;
+    color: white; }
 
 /*# sourceMappingURL=main.css.map */
