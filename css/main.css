@@ -24,6 +24,7 @@ main {
 #menu {
   position: fixed;
   top: 0;
+  z-index: 10;
   display: flex;
   width: 100vw;
   background: gray;
@@ -43,22 +44,63 @@ main {
       display: inline-block;
       text-transform: capitalize; }
 
-#recent-sessions {
+section {
   padding: 0 10%; }
-  #recent-sessions h2 {
+  section h2 {
     text-transform: uppercase; }
-    #recent-sessions h2::after {
+    section h2::after {
       content: "";
       display: block;
       background: black;
       width: 10vw;
       height: 0.5vw;
       margin-top: 1vw; }
-  #recent-sessions aside {
-    width: 100%;
-    margin: 0 auto;
-    background-color: gray; }
-  #recent-sessions article {
-    background: blue; }
+
+#recent-sessions aside {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: gray;
+  align-items: center;
+  justify-content: center; }
+  #recent-sessions aside h3 {
+    text-transform: uppercase; }
+#recent-sessions a {
+  display: block;
+  width: 10vw;
+  height: 5vw;
+  text-align: center;
+  background: white; }
+#recent-sessions article {
+  margin: 5vw 0;
+  display: flex;
+  background: blue; }
+#recent-sessions article:nth-child(2n+1) {
+  flex-direction: row-reverse; }
+  #recent-sessions article:nth-child(2n+1) aside {
+    background: pink; }
+#recent-sessions .genre-bar-container {
+  display: flex;
+  background: red;
+  justify-content: center; }
+  #recent-sessions .genre-bar-container h5 {
+    padding: 1vw;
+    background: yellow;
+    margin: 0 0.5vw; }
+
+#newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#blog-posts aside {
+  display: flex;
+  justify-content: space-between; }
+#blog-posts article {
+  padding: 2vw;
+  width: 25%;
+  background: yellow; }
+  #blog-posts article img {
+    width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

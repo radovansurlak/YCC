@@ -29,6 +29,7 @@ main
 #menu
   position: fixed
   top: 0
+  z-index: 10
   display: flex
   width: 100vw
   background: gray
@@ -48,7 +49,7 @@ main
       display: inline-block
       text-transform: capitalize
 
-#recent-sessions
+section
   padding: 0 10%
   h2
     text-transform: uppercase
@@ -59,9 +60,52 @@ main
       width: 10vw
       height: 0.5vw
       margin-top: 1vw
+
+#recent-sessions
   aside
-    width: 100%
-    margin: 0 auto
+    display: flex
+    flex-direction: column
+    width: 50%
     background-color: gray
+    align-items: center
+    justify-content: center
+    h3
+      text-transform: uppercase
+  a
+    display: block
+    width: 10vw
+    height: 5vw
+    text-align: center
+    background: white
   article
+    margin: 5vw 0
+    display: flex
     background: blue
+  article:nth-child(2n+1)
+    flex-direction: row-reverse
+    aside
+      background: pink
+  .genre-bar-container
+    display: flex
+    background: red
+    justify-content: center
+    h5
+      padding: 1vw
+      background: yellow
+      margin: 0 0.5vw
+
+#newsletter
+  display: flex
+  flex-direction: column
+  align-items: center
+
+#blog-posts
+  aside
+    display: flex
+    justify-content: space-between
+  article
+    padding: 2vw
+    width: 25%
+    background: yellow
+    img
+      width: 100%
