@@ -69,67 +69,45 @@
       <section id="recent-sessions">
         <h2>recent sessions</h2>
 
-        <article>
+        <?php
+        $query = $fpdo->from('sessions')
+                      ->innerJoin('artists ON artists.ID = sessions.artist_ID')
+                      ->select('artists.name');
 
-          <?php
-          $query = $fpdo->from('sessions')
-                        ->innerJoin('artists ON artists.ID = sessions.artist_ID')
-                        ->select('artists.name');
 
-          foreach ($query as $row) {
-            echo "name - {$row["name"]} <br/>";
-            echo "subheadline - {$row["subheadline"]} <br/>";
+
+        foreach ($query as $row) {
+
+        }
+
+        foreach ($query as $row) {
+          $artist_ID = $row["artist_ID"];
+          $genres = $fpdo->from('artist_has_genres AS art_gen')
+                        ->innerJoin('genres ON genres.ID = art_gen.genre_ID')
+                        ->select('name')
+                        ->where('art_gen.artist_ID', $artist_ID);
+
+          echo '<article>';
+          echo '<iframe id="ytplayer" type="text/html" width="50%" height="360"
+                src="https://www.youtube.com/embed/'.$row["videoURL"].'?autoplay=0&modestbranding=2&controls=0&showinfo=0"
+                frameborder="0">
+                </iframe>';
+          echo '<aside>';
+          echo '<div class="genre-bar-container">';
+          foreach ($genres as $genre) {
+            echo $genre['name'];
           }
+          echo '</div>';
 
-          ?>
+          echo "<h3>${row["name"]}</h3>";
+          echo "<h4>${row["subheadline"]}</h4>";
+          echo '<a href="#">read more</a>';
+          echo '</article>';
+        };
 
-          <iframe id="ytplayer" type="text/html" width="50%" height="360"
-          src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&modestbranding=2&controls=0&showinfo=0"
-          frameborder="0">
-          </iframe>
-
-          <aside>
-
-          <div class="genre-bar-container">
-            <h5>jazz</h5>
-            <h5>jazz</h5>
-            <h5>jazz</h5>
-          </div>
-
-          <h3>tanya</h3>
-          <h4>Sing with me</h4>
-
-          <a href="#">read more</a>
+        ?>
 
 
-        </aside>
-
-      </article>
-
-      <article>
-
-        <iframe id="ytplayer" type="text/html" width="50%" height="360"
-        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&modestbranding=2&controls=0&showinfo=0"
-        frameborder="0">
-        </iframe>
-
-        <aside>
-
-        <div class="genre-bar-container">
-          <h5>jazz</h5>
-          <h5>jazz</h5>
-          <h5>jazz</h5>
-        </div>
-
-        <h3>tanya</h3>
-        <h4>Sing with me</h4>
-
-        <a href="#">read more</a>
-
-
-      </aside>
-
-    </article>
 
       <article>
 
