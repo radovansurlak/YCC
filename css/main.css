@@ -117,6 +117,14 @@ section {
   #blog-posts article img {
     width: 100%; }
 
+#session-list {
+  margin-top: 5vw; }
+  #session-list #choose-genre-container {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    background: pink; }
+
 footer {
   background: gray;
   display: flex;

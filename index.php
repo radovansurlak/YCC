@@ -14,53 +14,14 @@
 
     <body>
 
+
       <?php
-        require("vendor/autoload.php");
-
-        $pdo = new PDO("mysql:host=localhost;dbname=ycc", "root", "root");
-        $fpdo = new FluentPDO($pdo);
-
+        require(__DIR__."/vendor/autoload.php");
+        require(__DIR__."/php-include/db_init.php");
+        require(__DIR__."/php-include/menu.php");
       ?>
 
-      <nav id="menu">
-          <ul>
-            <li v-for="menuItem in leftSide"><a :href="menuItem.address">{{menuItem.title}}</a></li>
-            <img src="img/logo.png">
-            <li v-for="menuItem in rightSide"><a :href="menuItem.address">{{menuItem.title}}</a></li>
-          </ul>
-      </nav>
-
       <main>
-
-        <script>
-            var app = new Vue({
-                el: '#menu',
-                data: {
-                    leftSide: [
-                      {
-                        title: "home",
-                        address: "#"
-                      }
-                      ,
-                      {
-                        title: "sessions",
-                        address: "#"
-                      }
-                    ],
-                    rightSide: [
-                      {
-                        title: "blog",
-                        address: "#"
-                      }
-                      ,
-                      {
-                        title: "contact",
-                        address: "#"
-                      }
-                    ]
-                }
-            });
-        </script>
 
         <h1>uncover local music gems</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
@@ -153,53 +114,11 @@
 
   </section>
 
-  <footer>
+  <?php
+    require(__DIR__."/php-include/footer.php");
+  ?>
 
-    <nav>
-        <ul id="footer-nav">
-          <li v-for="item in menuItems"><a :href="item.address">{{item.title}}</a></li>
-        </ul>
-    </nav>
 
-    <aside id="social-icons-bar">
-
-      <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-
-    </aside>
-
-  </footer>
-
-  <script>
-      var app = new Vue({
-          el: '#footer-nav',
-          data: {
-            menuItems: [
-              {
-                title: "home",
-                address: "#"
-              }
-              ,
-              {
-                title: "sessions",
-                address: "#"
-              }
-              ,
-              {
-                title: "blog",
-                address: "#"
-              }
-              ,
-              {
-                title: "contact",
-                address: "#"
-              }
-            ]
-
-          }
-      });
-  </script>
 
 
 

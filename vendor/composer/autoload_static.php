@@ -10,9 +10,14 @@ class ComposerStaticInit3b8d25b30e1e8ddf63d77e416d494da5
         '2610a18e262a9328d59872ebc8f6b5db' => __DIR__ . '/..' . '/fpdo/fluentpdo/FluentPDO/FluentPDO.php',
     );
 
+    public static $classMap = array (
+        'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->classMap = ComposerStaticInit3b8d25b30e1e8ddf63d77e416d494da5::$classMap;
 
         }, null, ClassLoader::class);
     }

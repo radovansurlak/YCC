@@ -1,5 +1,6 @@
 {
   "require": {
-	"fpdo/fluentpdo": "1.1.*"
+	"fpdo/fluentpdo": "1.1.*",
+   "altorouter/altorouter": "1.1.0"
 }
 }
