@@ -117,13 +117,26 @@ section {
   #blog-posts article img {
     width: 100%; }
 
-#session-list {
+#session-nav {
   margin-top: 5vw; }
-  #session-list #choose-genre-container {
+  #session-nav #choose-genre-container {
     display: flex;
     width: 50%;
     justify-content: space-between;
     background: pink; }
+
+#session-list {
+  display: flex;
+  justify-content: space-between; }
+  #session-list .session-bar {
+    align-items: center;
+    background: brown;
+    display: flex;
+    width: 30%;
+    flex-direction: column; }
+    #session-list .session-bar img {
+      align-self: center;
+      width: 100%; }
 
 footer {
   background: gray;

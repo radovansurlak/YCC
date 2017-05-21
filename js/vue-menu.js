@@ -4,12 +4,12 @@ var app = new Vue({
         leftSide: [
           {
             title: "home",
-            address: "#"
+            address: "/"
           }
           ,
           {
             title: "sessions",
-            address: "#"
+            address: "sessions"
           }
         ],
         rightSide: [

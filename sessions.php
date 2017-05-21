@@ -1,31 +1,3 @@
-<?php
-  require(__DIR__."/vendor/autoload.php");
-  require(__DIR__."/php-include/db_init.php");
-
-  //Routing
-  $router = new AltoRouter();
-
-  $router->map( 'GET', '/sessions.php/a', function() {
-    echo "tesssddt";
-  });
-
-
-
-  // match current request url
-  $match = $router->match();
-
-  // call closure or throw 404 status
-  if( $match && is_callable( $match['target'] ) ) {
-    call_user_func_array( $match['target'], $match['params'] );
-  } else {
-    // no route was matched
-    header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
-  };
-
-
-  require(__DIR__."/php-include/menu.php");
-
-  ?>
 <!doctype html>
 <html>
     <head>
@@ -42,9 +14,13 @@
 
     <body>
 
+    <?php
+      require("php-include/menu.php");
+    ?>
 
 
-    <section id="session-list">
+
+    <section id="session-nav">
       <h2>pick your favourite music style</h2>
       <div id="choose-genre-container">
         <h5>jazz</h5>
@@ -53,6 +29,30 @@
         <h5>jazz</h5>
       </div>
     </section>
+
+    <section id="session-list">
+      <?php
+          foreach ($query as $row) {
+              echo '<article class="session-bar">';
+              echo  '<img src="img/sessions/'.$row['image_URL'].'">';
+              echo  '<aside class="description">';
+              echo  '<h3>'.$row['name'].'</h3>';
+              echo  '<h4>'.$row['subheadline'].'</h3>';
+              echo  '<a href="'.$row['URL'].'">read more</a>';
+              echo  '</aside>
+                    </article>';
+          };
+      ?>
+    </section>
+
+
+    </main>
+  </body>
+</html>
+
+
+
+
 
 
 
