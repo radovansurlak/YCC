@@ -78,10 +78,10 @@
 
     <h2>unlock your access to exclusive live sessions</h2>
 
-    <form method="post" action="/news-comfirm">
+    <form method="post" action="/news-comfirm.php">
 
-      <input type="text" name="firstName" value="First Name">
-      <input type="email" name="email" value="E-mail">
+      <input type="text" name="firstName" placeholder="First Name">
+      <input type="email" name="email" placeholder="E-mail">
       <input type="submit" value="Submit"/>
 
     </form>

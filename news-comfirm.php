@@ -1,5 +1,31 @@
-<?php header( "refresh:5;url=/" );
+<?php
+  header( "refresh:5;url=/" );
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    };
+
+    require(__DIR__."/vendor/autoload.php");
+    require(__DIR__."/php-include/db_init.php");
+
+    $firstName = $email = "";
+
+    $firstName = filter_var($_POST['firstName'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+    $firstName = test_input($firstName);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $email = test_input($email);
+    echo $firstName;
+    echo $email;
+    $values = array('firstName' => $firstName, 'email' => $email);
+    $query = $fpdo->insertInto('newsletter')->values($values)->execute();
+  };
 ?>
+
 <!doctype html>
 <html>
     <head>
@@ -15,9 +41,8 @@
     </head>
 
     <body>
+
       <?php
-        require(__DIR__."/vendor/autoload.php");
-        require(__DIR__."/php-include/db_init.php");
         require(__DIR__."/php-include/menu.php");
       ?>
 

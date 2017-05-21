@@ -11,7 +11,7 @@
   $router->map( 'GET', '/test', function() {
     require('articles/test.php');
   });
-  $router->map( 'POST', '/news-comfirm', function() {
+  $router->map( 'POST', '/news-comfirm.php', function() {
     header('Location: news-comfirm.php');
   });
   $router->map( 'GET', '/sessions', function() {
