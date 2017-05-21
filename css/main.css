@@ -18,22 +18,23 @@ li {
   display: inline-block; }
 
 main {
+  top: 0;
   background-image: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   height: 50vw;
-  padding: 0 10%; }
+  padding: 0 20%; }
   main h1, main p {
     position: relative;
     color: white; }
   main h1 {
-    top: 30%;
+    top: 35%;
     text-transform: capitalize;
     font-weight: 400; }
   main p {
-    top: 31%;
-    width: 30%; }
+    top: 36%;
+    width: 50%; }
 
 #menu {
   position: fixed;
@@ -41,11 +42,10 @@ main {
   z-index: 10;
   display: flex;
   width: 100vw;
-  background: gray;
+  background: rgba(255, 255, 255, 0.9);
   margin: 0 auto; }
   #menu ul {
     padding: 0;
-    background: blue;
     width: 50%;
     margin: 0 auto;
     display: flex;
@@ -59,6 +59,7 @@ main {
       text-transform: capitalize; }
 
 section {
+  margin-top: 5%;
   padding: 0 10%; }
   section h2 {
     text-transform: uppercase; }

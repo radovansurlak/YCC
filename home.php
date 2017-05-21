@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title></title>
 
-        <link rel="stylesheet" href="css/normalize.css">
+        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://unpkg.com/vue"></script>
@@ -38,10 +38,11 @@
 
         $query = $fpdo->from('sessions')
                       ->innerJoin('artists ON artists.ID = sessions.artist_ID')
-                      ->select('artists.name');
+                      ->innerJoin('articles ON artists.article_ID = articles.ID')
+                      ->select('artists.name, articles.URL');
 
         foreach ($query as $row) {
-
+          var_dump($row);
         }
 
         foreach ($query as $row) {
@@ -77,9 +78,10 @@
 
     <h2>unlock your access to exclusive live sessions</h2>
 
-    <form method="post">
+    <form method="post" action="/news-comfirm">
+
       <input type="text" name="firstName" value="First Name">
-      <input type="email" name="email" value=" Name">
+      <input type="email" name="email" value="E-mail">
       <input type="submit" value="Submit"/>
 
     </form>
@@ -119,12 +121,6 @@
   <?php
     require(__DIR__."/php-include/footer.php");
   ?>
-
-
-
-
-
-
 
 
 

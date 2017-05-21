@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title></title>
 
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://unpkg.com/vue"></script>
@@ -18,15 +17,18 @@
       require("php-include/menu.php");
     ?>
 
-
-
     <section id="session-nav">
       <h2>pick your favourite music style</h2>
+
       <div id="choose-genre-container">
-        <h5>jazz</h5>
-        <h5>jazz</h5>
-        <h5>jazz</h5>
-        <h5>jazz</h5>
+        <?php
+          $genres = $fpdo->from('genres')
+                          ->select('name');
+          foreach ($genres as $genre) {
+            echo '<a href="'.$genre['name'].'"><h5>'.$genre['name'].'</h5></a>';
+          };
+        ?>
+        <a href="sessions"><h5>all</h5></a>
       </div>
     </section>
 
