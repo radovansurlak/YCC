@@ -23,6 +23,9 @@ li {
 p {
   font-size: 20px; }
 
+input {
+  outline: none; }
+
 main {
   top: 0;
   background-image: url("../img/bg.jpg");
@@ -126,6 +129,8 @@ section {
   align-items: center; }
   #newsletter h2 {
     max-width: 80%; }
+  #newsletter h4 {
+    margin-top: 2vw; }
   #newsletter form {
     margin: 2% 0 0 0;
     width: 100%;

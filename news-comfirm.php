@@ -19,8 +19,6 @@
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $email = test_input($email);
-    echo $firstName;
-    echo $email;
     $values = array('firstName' => $firstName, 'email' => $email);
     $query = $fpdo->insertInto('newsletter')->values($values)->execute();
   };
@@ -46,15 +44,10 @@
         require(__DIR__."/php-include/menu.php");
       ?>
 
-      <section>
+      <section id="newsletter">
         <h2>all done!</h2>
-        <h4>you'll get secret link for every live session from now on :)
+        <h4>You'll get secret link for every live session from now on :)
       </section>
-
-      <?php
-      require(__DIR__."/php-include/footer.php");
-      ?>
-
 
 
           <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
