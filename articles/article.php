@@ -67,7 +67,7 @@
           <h3><?php echo $subheadline ?></h3>
 
           <iframe id="ytplayer" type="text/html" width="100%" height="500"
-              src="https://www.youtube.com/embed/<?php echo $videoURL?>?autoplay=1&origin=http://example.com"
+              src="https://www.youtube.com/embed/<?php echo $videoURL?>?autoplay=0&controls=1&modestbranding=1"
               frameborder="0">
           </iframe>
 
