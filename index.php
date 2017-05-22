@@ -4,7 +4,6 @@
 
   $router = new AltoRouter();
 
-
   $router->map( 'GET', '/', function() {
     require('home.php');
   });

@@ -37,8 +37,6 @@
                       ->innerJoin('articles ON artists.article_ID = articles.ID')
                       ->select('artists.name, articles.URL');
 
-
-
         foreach ($query as $row) {
           $artist_ID = $row["artist_ID"];
           $genres = $fpdo->from('artist_has_genres AS art_gen')
@@ -108,20 +106,12 @@
 
     </aside>
 
-
-
   </section>
 
   <?php
     require(__DIR__."/php-include/footer.php");
   ?>
-
-
-
+  
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
-
     </body>
 </html>

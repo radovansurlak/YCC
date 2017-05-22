@@ -1,6 +1,14 @@
 <?php
+
+  //Redirect after 5s to homepage
+
   header( "refresh:5;url=/" );
+
+  //Security measure against hijacking through GET method
+
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    //Function to help sanitize data -
 
     function test_input($data) {
       $data = trim($data);
@@ -11,6 +19,8 @@
 
     require(__DIR__."/vendor/autoload.php");
     require(__DIR__."/php-include/db_init.php");
+
+    //Initialize variables
 
     $firstName = $email = "";
 
@@ -48,12 +58,6 @@
         <h2>all done!</h2>
         <h4>You'll get secret link for every live session from now on :)
       </section>
-
-
-          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-          <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-
-          <script src="js/main.js"></script>
 
       </body>
   </html>
