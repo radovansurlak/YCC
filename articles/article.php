@@ -4,21 +4,54 @@
         <meta charset="utf-8">
         <title></title>
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="../css/main.css">
 
         <script src="https://unpkg.com/vue"></script>
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
-        <?php
-          require("./vendor/autoload.php");
-          require("./php-include/db_init.php");
-          require("./php-include/menu.php");
+        <nav id="menu">
+            <ul>
+              <li v-for="menuItem in leftSide"><a :href="menuItem.address">{{menuItem.title}}</a></li>
+              <img src="../img/logo.png">
+              <li v-for="menuItem in rightSide"><a :href="menuItem.address">{{menuItem.title}}</a></li>
+            </ul>
+        </nav>
+        <script>
+          var app = new Vue({
+              el: '#menu',
+              data: {
+                  leftSide: [
+                    {
+                      title: "home",
+                      address: "../"
+                    }
+                    ,
+                    {
+                      title: "sessions",
+                      address: "../sessions"
+                    }
+                  ],
+                  rightSide: [
+                    {
+                      title: "blog",
+                      address: "../blog.php"
+                    }
+                    ,
+                    {
+                      title: "contact",
+                      address: "../contact.php"
+                    }
+                  ]
+              }
+          });
+        </script>
 
-    
+        <?php
+          require("vendor/autoload.php");
+          require("php-include/db_init.php");
+
 
           foreach ($query as $row) {
             $artist = $row['name'];

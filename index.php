@@ -13,6 +13,11 @@
     require('blog.php');
   });
 
+  $router->map( 'GET', '/contact', function() {
+    require('contact.php');
+  });
+
+
   $router->map( 'POST', '/news-comfirm.php', function() {
     header('Location: news-comfirm.php');
   });
@@ -27,7 +32,7 @@
     require('sessions.php');
   });
 
-  $router->map( 'GET', '/[a:link]', function($link) {
+  $router->map( 'GET', '/articles/[a:link]', function($link) {
     global $fpdo;
     global $query;
     $query = $fpdo->from('artists')
@@ -47,7 +52,7 @@
                       ->innerJoin('sessions ON sessions.artist_ID = artists.ID')
                       ->innerJoin('articles ON artists.article_ID = articles.ID')
                       ->where('artist_has_genres.genre_ID',$genre)
-                      ->select('artists.name, sessions.subheadline, articles.ID, articles.image_URL');
+                      ->select('artists.name, sessions.subheadline, articles.URL, articles.ID, articles.image_URL');
       require('sessions.php');
     };
     switch ($id) {
@@ -67,12 +72,7 @@
         prepareData(5);
         break;
     };
-
-
-
-
   });
-
 
 
   // match current request url

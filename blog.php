@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title></title>
 
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://unpkg.com/vue"></script>
@@ -17,34 +16,40 @@
           require("./vendor/autoload.php");
           require("./php-include/db_init.php");
           require("./php-include/menu.php");
+         ?>
 
+         <section id="blog">
+             <article class="blog-post">
+                <img src="img/blog_bg.png" alt="blog thumbnail picture">
+                <aside>
+                    <h3>Sample Blog Post</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <a href="#">read more</a>
+                </aside>
+             </article>
 
+             <article class="blog-post">
+                <img src="img/blog_bg.png" alt="blog thumbnail picture">
+                <aside>
+                    <h3>Sample Blog Post</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <a href="#">read more</a>
+                </aside>
+             </article>
 
-          foreach ($query as $row) {
-            $artist = $row['name'];
-            $subheadline = $row['headline'];
-            $text = $row['text'];
-            $videoURL = $row['videoURL'];
-          };
-
-        ?>
-
-        <section class="article">
-          <h1><?php echo $artist ?></h1>
-          <h3><?php echo $subheadline ?></h3>
-
-          <iframe id="ytplayer" type="text/html" width="100%" height="500"
-              src="https://www.youtube.com/embed/<?php echo $videoURL?>?autoplay=1&origin=http://example.com"
-              frameborder="0">
-          </iframe>
-
-          <article><?php echo $text ?></article>
-        </section>
+             <article class="blog-post">
+                <img src="img/blog_bg.png" alt="blog thumbnail picture">
+                <aside>
+                    <h3>Sample Blog Post</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <a href="#">read more</a>
+                </aside>
+             </article>
+         </section>
 
         <?php
             require("php-include/footer.php")
         ?>
-
 
 
     </body>

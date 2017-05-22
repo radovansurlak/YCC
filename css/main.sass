@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400')
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600')
 
 $screen-width: 50vw
 
 *
   margin: 0
   padding: 0
+  letter-spacing: -0.5px
 a
   text-decoration: none
   color: unset
@@ -12,14 +13,14 @@ a
 html
   background-color: #e9e7da
   color: #395442
-  font-size: 120%
+  font-size: 140%
   font-family: "Source Sans Pro", sans-serif
 ul
   list-style: none
 li
   display: inline-block
-
-
+p
+  font-size: 20px
 
 main
   top: 0
@@ -33,15 +34,15 @@ main
     position: relative
     color: white
   h1
-    top: 35%
+    top: 42%
     text-transform: capitalize
-    font-weight: 400
+    font-weight: 600
   p
-    top: 36%
+    top: 43%
     width: 50%
 
 #menu
-  position: fixed
+  padding: 1vw 0
   top: 0
   z-index: 10
   display: flex
@@ -59,6 +60,7 @@ main
     align-items: center
     list-style: none
     li
+      color: black
       display: inline-block
       text-transform: capitalize
 
@@ -67,12 +69,13 @@ section
   padding: 0 10%
   h2
     text-transform: uppercase
+    font-weight: 600
     &::after
       content: ""
       display: block
-      background: black
+      background: #395442
       width: 10vw
-      height: 0.5vw
+      height: 0.25vw
       margin-top: 1vw
 
 #recent-sessions
@@ -80,70 +83,185 @@ section
     display: flex
     flex-direction: column
     width: 50%
-    background-color: gray
+    background-color: white
     align-items: center
-    justify-content: center
+    padding: 5% 0
+    justify-content: space-around
     h3
+      font-size: 50px
+      font-weight: 400
       text-transform: uppercase
   a
     display: block
+    color: #cda34f
+    border: 3px solid #cda34f
+    line-height: 3vw
     width: 10vw
-    height: 5vw
+    height: 3vw
     text-align: center
     background: white
   article
+    box-shadow: 0 10px 20px 2px rgba(0,0,0,0.4)
     margin: 5vw 0
     display: flex
-    background: blue
   article:nth-child(2n+1)
     flex-direction: row-reverse
-    aside
-      background: pink
   .genre-bar-container
     display: flex
-    background: red
     justify-content: center
     h5
-      padding: 1vw
-      background: yellow
+      box-shadow: 0 1px 5px 0px rgba(0,0,0,0.3)
+      padding: 0.4vw 1.5vw
+      color: white
+      text-transform: uppercase
+      font-weight: 300
+      background: #cda34f
       margin: 0 0.5vw
 
 #newsletter
+  h2
+    max-width: 80%
+  padding: 5% 0
+  background: #f2e3b4
   display: flex
   flex-direction: column
   align-items: center
+  form
+    margin: 2% 0 0 0
+    width: 100%
+    display: flex
+    justify-content: center
+    input
+      font-size: 15px
+      width: 16%
+      padding: 1%
+      margin: 0 0.5vw
+    input[type="submit"]
+      background: white
+      border-radius: 3px
+      border: 3px solid #cda34f
 
 #blog-posts
   aside
+    margin: 5% 0
     display: flex
     justify-content: space-between
   article
-    padding: 2vw
-    width: 25%
-    background: yellow
+    width: 30%
+    background: white
+    display: flex
+    flex-direction: column
+    align-items: center
+    h3,p
+      width: 80%
+    h3
+      margin: 5% 0
+    p
+      margin-bottom: 5%
     img
       width: 100%
 
 #session-nav
   margin-top: 5vw
+  h2
+    text-transform: inherit
   #choose-genre-container
+    margin: 2% 0
     display: flex
-    width: 50%
-    justify-content: space-between
-    background: pink
+    justify-content: flex-start
+    h5:first-child
+      margin-left: 0
+    h5
+      box-shadow: 0 1px 5px 0px rgba(0,0,0,0.3)
+      padding: 0.4vw 1.5vw
+      color: white
+      text-transform: uppercase
+      font-weight: 300
+      background: #cda34f
+      margin: 0 0.5vw
 
 #session-list
   display: flex
+  margin-bottom: 5%
   justify-content: space-between
   .session-bar
-    align-items: center
-    background: brown
+    align-items: flex-start
+    background: white
     display: flex
     width: 30%
     flex-direction: column
     img
       align-self: center
       width: 100%
+  .description
+    h3
+      margin-bottom: 2%
+    h4
+      padding: 5% 0
+    a
+      margin-top: 5%
+      display: block
+      color: #cda34f
+      border: 3px solid #cda34f
+      line-height: 3vw
+      width: 10vw
+      height: 3vw
+      text-align: center
+      background: white
+    padding: 5%
+
+#contact
+  margin-bottom: 10%
+  p
+    margin: 3% 0
+    width: 60ch
+  form
+    display: flex
+    flex-direction: column
+    width: 60%
+    input, textarea
+      border: 3px solid #395442
+      padding: 1vw
+      margin: 0.6vw 0
+    input[type="submit"]
+      background: #cda34f
+      border: none
+      color: white
+      font: unset
+      text-transform: uppercase
+      width: 50%
+
+
+#blog
+  display: flex
+  flex-direction: column
+  .blog-post
+    img
+      width: 100%
+      height: auto
+      align-self: center
+    background: white
+    display: flex
+    width: 100%
+    height: 20%
+    margin: 3% 0
+    aside
+      padding: 0 10%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      h3
+        margin-bottom: 1%
+      a
+        margin-top: 2%
+        display: block
+        color: #cda34f
+        border: 3px solid #cda34f
+        line-height: 3vw
+        width: 10vw
+        height: 3vw
+        text-align: center
+        background: white
 
 .article
   display: flex
@@ -151,27 +269,32 @@ section
   flex-direction: column
   h1
     text-transform: uppercase
+    font-weight: 600
   h3
     text-transform: capitalize
+    font-weight: 400
+    margin-bottom: 2%
   p
     width: 65ch
-    margin: 5% 0
+    margin: 8% 0
 
 
 footer
-  background: gray
+  background: #395442
   display: flex
   align-items: center
   flex-direction: column
   text-transform: capitalize
+  #footer-nav,#social-icons-bar
+    color: #e9e7da
   #footer-nav
-    background: orange
-    width: 50vw
+    margin: 5% 0 0% 0%
+    width: 40vw
     display: flex
     justify-content: space-between
   #social-icons-bar
+    margin: 3% 0
     display: flex
     width: 30%
     justify-content: space-around
     font-size: 5vw
-    color: white

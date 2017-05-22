@@ -18,7 +18,7 @@
     ?>
 
     <section id="session-nav">
-      <h2>pick your favourite music style</h2>
+      <h2>Pick your favourite music style</h2>
 
       <div id="choose-genre-container">
         <?php
@@ -28,7 +28,7 @@
             echo '<a href="'.$genre['name'].'"><h5>'.$genre['name'].'</h5></a>';
           };
         ?>
-        <a href="sessions"><h5>all</h5></a>
+        <a><h5>all</h5></a>
       </div>
     </section>
 
@@ -40,7 +40,7 @@
               echo  '<aside class="description">';
               echo  '<h3>'.$row['name'].'</h3>';
               echo  '<h4>'.$row['subheadline'].'</h3>';
-              echo  '<a href="'.$row['URL'].'">read more</a>';
+              echo  '<a href="articles/'.$row['URL'].'">read more</a>';
               echo  '</aside>
                     </article>';
           };

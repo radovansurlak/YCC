@@ -14,7 +14,6 @@
 
     <body>
 
-
       <?php
         require(__DIR__."/vendor/autoload.php");
         require(__DIR__."/php-include/db_init.php");
@@ -24,7 +23,7 @@
       <main>
 
         <h1>uncover local music gems</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p>Your Cozy Corner gathers upcoming local artists and servers them right in front of you.</p>
 
       </main>
 
@@ -33,17 +32,12 @@
 
         <?php
 
-
-
-
         $query = $fpdo->from('sessions')
                       ->innerJoin('artists ON artists.ID = sessions.artist_ID')
                       ->innerJoin('articles ON artists.article_ID = articles.ID')
                       ->select('artists.name, articles.URL');
 
-        foreach ($query as $row) {
-          var_dump($row);
-        }
+
 
         foreach ($query as $row) {
           $artist_ID = $row["artist_ID"];
@@ -66,7 +60,7 @@
 
           echo "<h3>${row["name"]}</h3>";
           echo "<h4>${row["subheadline"]}</h4>";
-          echo '<a href="#">read more</a>';
+          echo '<a href="articles/'.$row['URL'].'">read more</a>';
           echo '</article>';
         };
 
@@ -81,8 +75,8 @@
     <form method="post" action="/news-comfirm.php">
 
       <input type="text" name="firstName" placeholder="First Name">
-      <input type="email" name="email" placeholder="E-mail">
-      <input type="submit" value="Submit"/>
+      <input type="email" name="email" placeholder="E-mail address">
+      <input type="submit" value="Subscribe"/>
 
     </form>
 

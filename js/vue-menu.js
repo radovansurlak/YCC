@@ -15,12 +15,12 @@ var app = new Vue({
         rightSide: [
           {
             title: "blog",
-            address: "blog"
+            address: "/blog"
           }
           ,
           {
             title: "contact",
-            address: "contact"
+            address: "/contact"
           }
         ]
     }
