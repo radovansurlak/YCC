@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html>
     <head>
@@ -23,13 +26,13 @@
              <h2>contact us</h2>
              <p>
              <?php
-                 echo $_SESSION;
                  if(!empty($_SESSION['sent'])) {
                      echo "Message sent successfully :)";
                  } else {
                      echo "We'll be happy to hear from you, whether you'd like to perform an YCC session
                       or ask us anything, give us a message :)";
                  };
+                 unset($_SESSION['sent']);
              ?>
              </p>
 

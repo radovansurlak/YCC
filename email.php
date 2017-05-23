@@ -1,5 +1,4 @@
 <?php
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Function to help sanitize data
 
     function test_input($data) {
@@ -36,5 +35,4 @@
     mail($to, $subject, $message, $headers);
 
     header("Location: contact.php");
-  };
 ?>
