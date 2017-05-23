@@ -18,7 +18,38 @@
               <li v-for="menuItem in rightSide"><a :href="menuItem.address">{{menuItem.title}}</a></li>
             </ul>
         </nav>
+        <nav id="menu-mobile">
+            <img src="../img/logo.png">
+            <ul>
+              <li v-for="menuItem in links"><a :href="menuItem.address">{{menuItem.title}}</a></li>
+            </ul>
+        </nav>
         <script>
+            var app = new Vue({
+                el: '#menu-mobile',
+                data: {
+                    links: [
+                      {
+                        title: "home",
+                        address: "/"
+                      }
+                      ,
+                      {
+                        title: "sessions",
+                        address: "sessions"
+                      },
+                      {
+                        title: "blog",
+                        address: "/blog"
+                      },
+                      {
+                        title: "contact",
+                        address: "/contact"
+                      }
+                    ]
+                }
+            });
+
           var app = new Vue({
               el: '#menu',
               data: {

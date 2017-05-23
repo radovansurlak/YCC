@@ -29,6 +29,12 @@ p {
 input {
   outline: none; }
 
+input::-webkit-input-placeholder {
+  font-size: 120%; }
+
+textarea {
+  font-size: 100%; }
+
 main {
   top: 0;
   background-image: url("../img/bg.jpg");
@@ -311,7 +317,7 @@ footer {
     font-size: 60px; }
 
   main {
-    height: 50vh; }
+    height: 100vw; }
     main h1 {
       top: 20%; }
     main p {
@@ -326,12 +332,13 @@ footer {
     #menu-mobile ul {
       border-top: 1.5px solid rgba(0, 0, 0, 0.2);
       border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
-      padding: 20px 0;
+      padding: 40px 0;
       display: flex;
       justify-content: space-around; }
     #menu-mobile img {
+      padding-top: 20px;
       align-self: center;
-      height: 20vh; }
+      height: 30vw; }
 
   article {
     flex-direction: column; }
@@ -346,16 +353,17 @@ footer {
       box-sizing: content-box;
       margin-top: 5px;
       width: 70%;
-      padding: 40px; }
+      padding: 70px; }
 
   #newsletter form {
+    margin-top: 50px;
     flex-direction: column;
     align-items: center; }
     #newsletter form input {
       box-sizing: border-box;
       width: 80%;
       padding: 50px;
-      margin: 5px 0;
+      margin: 10px 0;
       font-size: 50px; }
     #newsletter form input[type="submit"] {
       padding: 50px; }
@@ -365,11 +373,13 @@ footer {
     align-items: center; }
     #blog-posts aside article {
       width: 95%;
-      margin-bottom: 20px; }
+      margin-bottom: 50px; }
       #blog-posts aside article p {
-        font-size: 50px; }
+        font-size: 50px;
+        margin-bottom: 60px; }
 
   footer nav {
+    padding: 20px;
     width: 90%; }
     footer nav #footer-nav {
       width: 100%;
@@ -377,9 +387,10 @@ footer {
       justify-content: space-around; }
   footer #social-icons-bar {
     width: 70%;
-    font-size: 80px; }
+    font-size: 100px; }
 
   #session-nav #choose-genre-container {
+    margin-top: 50px;
     justify-content: space-around;
     flex-wrap: wrap; }
     #session-nav #choose-genre-container h5 {
@@ -407,19 +418,21 @@ footer {
         margin: 0; }
       #session-list .description a {
         display: block;
-        padding: 20px;
-        width: 90%; }
+        padding: 50px;
+        width: 80%; }
 
   #blog .blog-post aside {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center; }
+    #blog .blog-post aside p {
+      font-size: 50px; }
     #blog .blog-post aside > * {
       margin: 20px 0; }
     #blog .blog-post aside a {
       display: block;
-      padding: 20px;
+      padding: 50px;
       width: 90%; }
 
   #contact p {
@@ -428,10 +441,25 @@ footer {
   #contact form {
     margin: 0 auto;
     width: 100%; }
+    #contact form input::-webkit-input-placeholder {
+      font-size: 40px;
+      line-height: 40px; }
+    #contact form textarea {
+      font-size: 40px; }
     #contact form input {
       margin: 5px 0;
-      padding: 20px; }
+      padding: 60px;
+      font-size: 40px; }
     #contact form input[type="submit"] {
-      width: 100%; } }
+      width: 100%; }
+  #contact p {
+    font-size: 50px; }
+
+  .article {
+    font-size: 40px; }
+    .article article p {
+      text-align: left;
+      width: 90%;
+      font-size: 40px; } }
 
 /*# sourceMappingURL=main.css.map */
