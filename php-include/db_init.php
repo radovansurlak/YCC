@@ -1,4 +1,4 @@
 <?php
-  $pdo = new PDO("mysql://uywy1xxi8tlcsoti:q51n48xnysn53n60@irkm0xtlo2pcmvvz.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/vsimm448nyzo079a;dbname=ycc", "uywy1xxi8tlcsoti", "q51n48xnysn53n60");
+  $pdo = new PDO("mysql:host=eu-cdbr-west-01.cleardb.com;dbname=heroku_d475e5562c46b1e", "b0bce84ae9d41b", "8d036d90");
   $fpdo = new FluentPDO($pdo);
 ?>
