@@ -306,11 +306,14 @@ footer {
     justify-content: space-around;
     font-size: 5vw; }
 
-@media screen and (max-width: 600px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: 60px; }
+
   main {
     height: 50vh; }
     main h1 {
-      top: 26%; }
+      top: 20%; }
     main p {
       display: none; }
 
@@ -337,12 +340,13 @@ footer {
 
   #recent-sessions aside {
     width: 100%; }
+    #recent-sessions aside h3 {
+      margin-top: 20px; }
     #recent-sessions aside a {
       box-sizing: content-box;
       margin-top: 5px;
       width: 70%;
-      height: 50px;
-      line-height: 50px; }
+      padding: 40px; }
 
   #newsletter form {
     flex-direction: column;
@@ -368,7 +372,7 @@ footer {
       justify-content: space-around; }
   footer #social-icons-bar {
     width: 70%;
-    font-size: 50px; }
+    font-size: 80px; }
 
   #session-nav #choose-genre-container {
     justify-content: space-around;
@@ -411,6 +415,18 @@ footer {
     #blog .blog-post aside a {
       display: block;
       padding: 20px;
-      width: 90%; } }
+      width: 90%; }
+
+  #contact p {
+    margin: 10% 0;
+    width: 90%; }
+  #contact form {
+    margin: 0 auto;
+    width: 100%; }
+    #contact form input {
+      margin: 5px 0;
+      padding: 20px; }
+    #contact form input[type="submit"] {
+      width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */
