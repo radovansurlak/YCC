@@ -24,10 +24,10 @@
     global $fpdo;
     global $query;
     $query = $fpdo->from('sessions')
-                    ->innerJoin('artists ON sessions.artist_ID = artists.ID')
-                    ->innerJoin('sessions ON sessions.artist_ID = artists.ID')
-                    ->innerJoin('articles ON artists.article_ID = articles.ID')
-                    ->select('artists.name, sessions.subheadline, articles.URL, articles.image_URL');
+                    ->innerJoin('artists ON sessions.artistID = artists.ID')
+                    ->innerJoin('sessions ON sessions.artistID = artists.ID')
+                    ->innerJoin('articles ON artists.articleID = articles.ID')
+                    ->select('artists.name, sessions.subheadline, articles.URL, articles.imageURL');
     require('sessions.php');
   });
 
@@ -35,8 +35,8 @@
     global $fpdo;
     global $query;
     $query = $fpdo->from('artists')
-          ->innerJoin('articles ON artists.article_ID = articles.ID')
-          ->innerJoin('sessions ON sessions.article_ID = articles.ID')
+          ->innerJoin('articles ON artists.articleID = articles.ID')
+          ->innerJoin('sessions ON sessions.articleID = articles.ID')
           ->select('name, text, videoURL, headline')
           ->where('articles.URL',$link);
     require('articles/article.php');
@@ -47,11 +47,11 @@
       global $fpdo;
       global $query;
       $query = $fpdo->from('artist_has_genres')
-                      ->innerJoin('artists ON artist_has_genres.artist_ID = artists.ID')
-                      ->innerJoin('sessions ON sessions.artist_ID = artists.ID')
-                      ->innerJoin('articles ON artists.article_ID = articles.ID')
-                      ->where('artist_has_genres.genre_ID',$genre)
-                      ->select('artists.name, sessions.subheadline, articles.URL, articles.ID, articles.image_URL');
+                      ->innerJoin('artists ON artist_has_genres.artistID = artists.ID')
+                      ->innerJoin('sessions ON sessions.artistID = artists.ID')
+                      ->innerJoin('articles ON artists.articleID = articles.ID')
+                      ->where('artist_has_genres.genreID',$genre)
+                      ->select('artists.name, sessions.subheadline, articles.URL, articles.ID, articles.imageURL');
       require('sessions.php');
     };
     switch ($id) {

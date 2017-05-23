@@ -34,16 +34,16 @@
         <?php
 
         $query = $fpdo->from('sessions')
-                      ->innerJoin('artists ON artists.ID = sessions.artist_ID')
-                      ->innerJoin('articles ON artists.article_ID = articles.ID')
+                      ->innerJoin('artists ON artists.ID = sessions.artistID')
+                      ->innerJoin('articles ON artists.articleID = articles.ID')
                       ->select('artists.name, articles.URL');
 
         foreach ($query as $row) {
-          $artist_ID = $row["artist_ID"];
+          $artistID = $row["artistID"];
           $genres = $fpdo->from('artist_has_genres AS art_gen')
-                        ->innerJoin('genres ON genres.ID = art_gen.genre_ID')
+                        ->innerJoin('genres ON genres.ID = art_gen.genreID')
                         ->select('name')
-                        ->where('art_gen.artist_ID', $artist_ID);
+                        ->where('art_gen.artistID', $artistID);
 
           echo '<article>';
           echo '<iframe id="ytplayer" type="text/html" width="50%" height="360"

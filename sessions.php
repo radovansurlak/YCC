@@ -38,7 +38,7 @@
       <?php
           foreach ($query as $row) {
               echo '<article class="session-bar">';
-              echo  '<img src="img/sessions/'.$row['image_URL'].'">';
+              echo  '<img src="img/sessions/'.$row['imageURL'].'">';
               echo  '<aside class="description">';
               echo  '<h3>'.$row['name'].'</h3>';
               echo  '<h4>'.$row['subheadline'].'</h3>';
@@ -53,11 +53,6 @@
     </main>
   </body>
 </html>
-
-
-
-
-
 
 
     <?php

@@ -8,9 +8,9 @@
 
   <aside id="social-icons-bar">
 
-    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-    <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/oktofail/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://www.instagram.com/itsoktofail/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
 
   </aside>
 
