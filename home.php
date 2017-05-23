@@ -15,9 +15,10 @@
     <body>
 
       <?php
-        require(__DIR__."/vendor/autoload.php");
-        require(__DIR__."/php-include/db_init.php");
-        require(__DIR__."/php-include/menu.php");
+        require("vendor/autoload.php");
+        require("php-include/db_init.php");
+        require("php-include/menu.php");
+        require("php-include/mobile-menu.php");
       ?>
 
       <main>
@@ -59,6 +60,7 @@
           echo "<h3>${row["name"]}</h3>";
           echo "<h4>${row["subheadline"]}</h4>";
           echo '<a href="articles/'.$row['URL'].'">read more</a>';
+          echo '</aside>';
           echo '</article>';
         };
 
@@ -111,7 +113,7 @@
   <?php
     require(__DIR__."/php-include/footer.php");
   ?>
-  
+
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     </body>
 </html>

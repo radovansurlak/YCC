@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
+#menu-mobile {
+  display: none; }
+
 * {
   margin: 0;
   padding: 0;
@@ -79,7 +82,7 @@ section {
       display: block;
       background: #395442;
       width: 10vw;
-      height: 0.25vw;
+      height: 8px;
       margin-top: 1vw; }
 
 #recent-sessions aside {
@@ -301,5 +304,100 @@ footer {
     width: 30%;
     justify-content: space-around;
     font-size: 5vw; }
+
+@media screen and (max-width: 600px) {
+  main {
+    height: 50vh; }
+    main h1 {
+      top: 26%; }
+    main p {
+      display: none; }
+
+  #menu {
+    display: none; }
+
+  #menu-mobile {
+    display: flex;
+    flex-direction: column; }
+    #menu-mobile ul {
+      border-top: 1.5px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-around; }
+    #menu-mobile img {
+      align-self: center;
+      height: 20vh; }
+
+  article {
+    flex-direction: column; }
+    article #ytplayer {
+      width: 100%; }
+
+  #recent-sessions aside {
+    width: 100%; }
+    #recent-sessions aside a {
+      box-sizing: content-box;
+      margin-top: 5px;
+      width: 70%;
+      height: 50px;
+      line-height: 50px; }
+
+  #newsletter form {
+    flex-direction: column;
+    align-items: center; }
+    #newsletter form input {
+      box-sizing: border-box;
+      width: 80%;
+      padding: 15px;
+      margin: 5px 0; }
+
+  #blog-posts aside {
+    flex-direction: column;
+    align-items: center; }
+    #blog-posts aside article {
+      width: 95%;
+      margin-bottom: 20px; }
+
+  footer nav {
+    width: 90%; }
+    footer nav #footer-nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-around; }
+  footer #social-icons-bar {
+    width: 70%;
+    font-size: 50px; }
+
+  #session-nav #choose-genre-container {
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    #session-nav #choose-genre-container h5 {
+      margin: 5px;
+      padding: 10px;
+      width: 20vw;
+      flex-wrap: wrap;
+      text-align: center; }
+
+  #session-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #session-list .session-bar {
+      width: 95%; }
+    #session-list .description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      width: 100%; }
+      #session-list .description h3, #session-list .description h4 {
+        padding: 0;
+        margin: 0; }
+      #session-list .description a {
+        display: block;
+        padding: 20px;
+        width: 90%; } }
 
 /*# sourceMappingURL=main.css.map */

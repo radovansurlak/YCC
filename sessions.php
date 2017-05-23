@@ -14,8 +14,9 @@
     <body>
 
     <?php
-      error_reporting( E_ALL ); 
+      error_reporting( E_ALL );
       require("php-include/menu.php");
+      require("php-include/mobile-menu.php");
     ?>
 
     <section id="session-nav">
