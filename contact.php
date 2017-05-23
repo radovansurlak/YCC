@@ -24,10 +24,10 @@
              <p>We'll be happy to hear from you, whether you'd like to perform an YCC session
              or ask us anything, give us a message :)</p>
 
-             <form method="post">
+             <form method="post" action="email.php">
                <input type="text" name="firstName" placeholder="First Name">
                <input type="email" name="email" placeholder="E-mail">
-               <textarea rows="4" cols="50">
+               <textarea name="message" rows="4" cols="50">Type your message here :)
                 </textarea>
                <input type="submit" value="send"/>
              </form>

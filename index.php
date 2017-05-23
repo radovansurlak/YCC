@@ -1,6 +1,6 @@
 <?php
-  require(__DIR__."/vendor/autoload.php");
-  require(__DIR__."/php-include/db_init.php");
+  require("vendor/autoload.php");
+  require("php-include/db_init.php");
 
   $router = new AltoRouter();
 

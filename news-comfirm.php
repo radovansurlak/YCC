@@ -24,11 +24,16 @@
 
     $firstName = $email = "";
 
+    //Sanitizing sequence
+
     $firstName = filter_var($_POST['firstName'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
     $firstName = test_input($firstName);
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $email = test_input($email);
+
+    //End of sanitization
+
     $values = array('firstName' => $firstName, 'email' => $email);
     $query = $fpdo->insertInto('newsletter')->values($values)->execute();
   };
@@ -60,4 +65,4 @@
       </section>
 
       </body>
-  </html>
+</html>
