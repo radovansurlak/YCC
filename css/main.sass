@@ -48,6 +48,7 @@ main
     width: 50%
 
 #menu
+  border-bottom: 2px solid rgba(0,0,0,0.1)
   padding: 1vw 0
   top: 0
   z-index: 10
@@ -395,3 +396,17 @@ footer
       justify-content: center
       box-sizing: border-box
       width: 100%
+
+  #blog
+    .blog-post
+      aside
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        align-items: center
+        &>*
+          margin: 20px 0
+        a
+          display: block
+          padding: 20px
+          width: 90%

@@ -16,6 +16,7 @@
           require("./vendor/autoload.php");
           require("./php-include/db_init.php");
           require("./php-include/menu.php");
+          require("php-include/mobile-menu.php");
          ?>
 
          <section id="blog">
