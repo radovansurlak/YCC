@@ -366,6 +366,8 @@ footer {
     #blog-posts aside article {
       width: 95%;
       margin-bottom: 20px; }
+      #blog-posts aside article p {
+        font-size: 50px; }
 
   footer nav {
     width: 90%; }
