@@ -1,38 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-
-        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-        <link rel="stylesheet" href="css/main.css">
-
-        <script src="https://unpkg.com/vue"></script>
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-
-    <body>
-
-      <?php
-        require("vendor/autoload.php");
-        require("php-include/db_init.php");
-        require("php-include/menu.php");
-        require("php-include/mobile-menu.php");
+  <head>
+    <meta charset="utf-8">
+    <title>Your Cozy Corner</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <?php
+      require("vendor/autoload.php");
+      require("php-include/db_init.php");
+      require("php-include/menu.php");
+      require("php-include/mobile-menu.php");
       ?>
-
-      <main>
-
-        <h1>uncover local music gems</h1>
-        <p>Your Cozy Corner gathers upcoming local artists and servers them right in front of you.</p>
-
-      </main>
-
-      <section id="recent-sessions">
-        <h2>recent sessions</h2>
-
-        <?php
-
+    <main>
+      <h1>uncover local music gems</h1>
+      <p>Your Cozy Corner gathers upcoming local artists and servers them right in front of you.</p>
+    </main>
+    <section id="recent-sessions">
+      <h2>recent sessions</h2>
+      <?php
         $query = $fpdo->from('sessions')
                       ->innerJoin('artists ON artists.ID = sessions.artistID')
                       ->innerJoin('articles ON artists.articleID = articles.ID')
@@ -46,9 +34,9 @@
                         ->where('art_gen.artistID', $artistID);
 
           echo '<article>';
-          echo '<iframe id="ytplayer" type="text/html" width="50%" height="360"
+          echo '<iframe id="ytplayer" height="360"
                 src="https://www.youtube.com/embed/'.$row["videoURL"].'?autoplay=0&modestbranding=2&controls=0&showinfo=0"
-                frameborder="0">
+                >
                 </iframe>';
           echo '<aside>';
           echo '<div class="genre-bar-container">';
@@ -65,55 +53,37 @@
         };
 
         ?>
-
-  </section>
-
-  <section id="newsletter">
-
-    <h2>unlock your access to exclusive live sessions</h2>
-
-    <form method="post" action="/news-comfirm.php">
-
-      <input type="text" name="firstName" placeholder="First Name">
-      <input type="email" name="email" placeholder="E-mail address">
-      <input type="submit" value="Subscribe"/>
-
-    </form>
-
-  </section>
-
-  <section id="blog-posts">
-
-    <h2>recent blog posts</h2>
-
-    <aside>
-
-      <article>
-        <img src="img/blog_bg.png">
-        <h3>Passion is not always enough</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </article>
-
-      <article>
-        <img src="img/blog_bg.png">
-        <h3>Passion is not always enough</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </article>
-
-      <article>
-        <img src="img/blog_bg.png">
-        <h3>Passion is not always enough</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-      </article>
-
-    </aside>
-
-  </section>
-
-  <?php
-    require(__DIR__."/php-include/footer.php");
-  ?>
-
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    </body>
+    </section>
+    <section id="newsletter">
+      <h2>unlock your access to exclusive live sessions</h2>
+      <form method="post" action="/news-comfirm.php">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="email" name="email" placeholder="E-mail address">
+        <input type="submit" value="Subscribe"/>
+      </form>
+    </section>
+    <section id="blog-posts">
+      <h2>recent blog posts</h2>
+      <aside>
+        <article>
+          <img alt="blog post cover image" src="img/blog_bg.png">
+          <h3>Passion is not always enough</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </article>
+        <article>
+          <img alt="blog post cover image" src="img/blog_bg.png">
+          <h3>Passion is not always enough</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </article>
+        <article>
+          <img alt="blog post cover image" src="img/blog_bg.png">
+          <h3>Passion is not always enough</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </article>
+      </aside>
+    </section>
+    <?php
+      require(__DIR__."/php-include/footer.php");
+      ?>
+  </body>
 </html>

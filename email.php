@@ -24,7 +24,6 @@
     $email = test_input($email);
     $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
-
     $to      = 'ioana@yourcozycorner.com';
     $subject = "${firstName} sent you a message";
     $headers = 'From: webmaster@yourcozycorner.com' . "\r\n" .

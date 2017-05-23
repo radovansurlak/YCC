@@ -73,7 +73,6 @@
     };
   });
 
-
   // match current request url
   $match = $router->match();
 

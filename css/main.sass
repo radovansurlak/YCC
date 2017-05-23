@@ -4,9 +4,6 @@ $screen-width: 50vw
 
 #menu-mobile
   display: none
-
-
-
 *
   margin: 0
   padding: 0
@@ -50,22 +47,27 @@ main
   p
     top: 43%
     width: 50%
+#ytplayer
+  width: 50%
+  border: none
 
 #menu
+  justify-content: center
   border-bottom: 2px solid rgba(0,0,0,0.1)
   padding: 1vw 0
-  top: 0
+  margin: 0 auto
   z-index: 10
   display: flex
   width: 100vw
   background: #e9e7da
   margin: 0 auto
+  img
+    height: 70px
   ul
-    img
-      height: 70px
+    a
+      color: black
     padding: 0
-    width: 50%
-    margin: 0 auto
+    width: 20%
     display: flex
     justify-content: space-around
     align-items: center
@@ -290,6 +292,8 @@ section
     text-align: center
     width: 55ch
     margin: 5% 0
+  #ytplayer
+    width: 90%
 
 footer
   background: #395442
@@ -331,6 +335,8 @@ footer
       padding: 40px 0
       display: flex
       justify-content: space-around
+      a
+        color: black
 
     display: flex
     flex-direction: column
@@ -374,10 +380,12 @@ footer
         font-size: 50px
         margin-bottom: 60px
   footer
+
     nav
       padding: 20px
       width: 90%
       #footer-nav
+        color: white
         width: 100%
         display: flex
         justify-content: space-around
