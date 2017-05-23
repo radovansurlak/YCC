@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+      <!-- Require Menus -->
       <?php
       require("php-include/menu.php");
       require("php-include/mobile-menu.php");
       ?>
+      <!-- Sessions navigation elements -->
     <section id="session-nav">
       <h2>Pick your favourite music style</h2>
       <div id="choose-genre-container">
@@ -27,6 +29,7 @@
         </a>
       </div>
     </section>
+    <!-- Sessions browser screen -->
     <section id="session-list">
       <?php
         foreach ($query as $row) {
@@ -41,6 +44,7 @@
         };
         ?>
     </section>
+    <!-- Require footer -->
     <?php
       require(__DIR__."/php-include/footer.php");
       ?>

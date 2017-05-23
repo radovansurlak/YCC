@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#menu-mobile',
     data: {
+        //Menu items stored as JS objects
         links: [
           {
             title: "home",

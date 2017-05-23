@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+    <!-- Initialize dependencies -->
     <?php
       require("./vendor/autoload.php");
       require("./php-include/db_init.php");
       require("./php-include/menu.php");
       require("php-include/mobile-menu.php");
       ?>
+    <!-- Blog section -->
     <section id="blog">
+      <!-- Blog post -->
       <article class="blog-post">
         <img src="img/blog_bg.png" alt="blog thumbnail picture">
         <aside>
@@ -24,6 +27,7 @@
           <a href="#">read more</a>
         </aside>
       </article>
+      <!-- Blog post -->
       <article class="blog-post">
         <img src="img/blog_bg.png" alt="blog thumbnail picture">
         <aside>
@@ -32,6 +36,7 @@
           <a href="#">read more</a>
         </aside>
       </article>
+      <!-- Blog post -->
       <article class="blog-post">
         <img src="img/blog_bg.png" alt="blog thumbnail picture">
         <aside>
@@ -40,7 +45,9 @@
           <a href="#">read more</a>
         </aside>
       </article>
+    <!-- End of blog post screen -->
     </section>
+    <!-- Require footer -->
     <?php
       require("php-include/footer.php")
       ?>

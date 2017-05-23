@@ -1,4 +1,5 @@
 <?php
+//Start up PHP session so we can output "Message sent successfully" later on
 session_start();
 ?>
 <!doctype html>
@@ -11,11 +12,11 @@ session_start();
         <link rel="stylesheet" href="css/main.css">
 
         <script src="https://unpkg.com/vue"></script>
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
+        <!-- Initialize dependencies -->
         <?php
           require("./vendor/autoload.php");
           require("./php-include/db_init.php");
@@ -27,15 +28,19 @@ session_start();
              <h2>contact us</h2>
              <p>
              <?php
+                 //Display success message if e-mail was already sent
                  if(!empty($_SESSION['sent'])) {
                      echo "Message sent successfully :)";
                  } else {
                      echo "We'll be happy to hear from you, whether you'd like to perform an YCC session
                       or ask us anything, give us a message :)";
                  };
+                 //Unset PHP session variable
                  unset($_SESSION['sent']);
              ?>
              </p>
+
+             <!-- Email form -->
 
              <form method="post" action="email.php">
                <input type="text" name="firstName" placeholder="First Name">
@@ -46,6 +51,8 @@ session_start();
              </form>
 
          </section>
+
+        <!-- Require footer -->
 
         <?php
             require("php-include/footer.php")

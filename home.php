@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+    <!-- Initialize dependencies -->
     <?php
       require("vendor/autoload.php");
       require("php-include/db_init.php");
       require("php-include/menu.php");
       require("php-include/mobile-menu.php");
       ?>
+    <!-- Above the fold section with background image -->
     <main>
       <h1>uncover local music gems</h1>
       <p>Your Cozy Corner gathers upcoming local artists and servers them right in front of you.</p>
     </main>
+    <!-- Section with a session list -->
     <section id="recent-sessions">
       <h2>recent sessions</h2>
       <?php
+        //Feeding data from SQL database
         $query = $fpdo->from('sessions')
                       ->innerJoin('artists ON artists.ID = sessions.artistID')
                       ->innerJoin('articles ON artists.articleID = articles.ID')
@@ -32,11 +36,10 @@
                         ->innerJoin('genres ON genres.ID = art_gen.genreID')
                         ->select('name')
                         ->where('art_gen.artistID', $artistID);
-
+          //Data output via PHP echo and string interpolation
           echo '<article>';
           echo '<iframe id="ytplayer" height="360"
-                src="https://www.youtube.com/embed/'.$row["videoURL"].'?autoplay=0&modestbranding=2&controls=0&showinfo=0"
-                >
+                src="https://www.youtube.com/embed/'.$row["videoURL"].'?autoplay=0&modestbranding=2&controls=0&showinfo=0">
                 </iframe>';
           echo '<aside>';
           echo '<div class="genre-bar-container">';
@@ -54,6 +57,7 @@
 
         ?>
     </section>
+    <!-- Newsletter form section -->
     <section id="newsletter">
       <h2>unlock your access to exclusive live sessions</h2>
       <form method="post" action="/news-comfirm.php">
@@ -62,6 +66,7 @@
         <input type="submit" value="Subscribe"/>
       </form>
     </section>
+    <!-- Hardcoded list of blog posts -> Object for further development -->
     <section id="blog-posts">
       <h2>recent blog posts</h2>
       <aside>
@@ -82,6 +87,7 @@
         </article>
       </aside>
     </section>
+    <!-- Require footer -->
     <?php
       require(__DIR__."/php-include/footer.php");
       ?>

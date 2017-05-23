@@ -1,9 +1,13 @@
+// Google fonts import
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600')
 
 $screen-width: 50vw
 
+//Disable mobile menu by default
 #menu-mobile
   display: none
+
+//Restyle standard HTML elements
 *
   margin: 0
   padding: 0
@@ -28,6 +32,9 @@ input::-webkit-input-placeholder
   font-size: 120%
 textarea
   font-size: 100%
+//
+
+//Above the fold section styling
 
 main
   top: 0
@@ -47,9 +54,14 @@ main
   p
     top: 43%
     width: 50%
+
+//Youtube embeded player styling
+
 #ytplayer
   width: 50%
   border: none
+
+//Desktop menu styles
 
 #menu
   justify-content: center
@@ -77,6 +89,8 @@ main
       display: inline-block
       text-transform: capitalize
 
+//Default section pre-styling
+
 section
   margin-top: 5%
   padding: 0 10%
@@ -90,6 +104,8 @@ section
       width: 10vw
       height: 8px
       margin-top: 1vw
+
+//Recent sessions styles
 
 #recent-sessions
   aside
@@ -131,6 +147,8 @@ section
       background: #cda34f
       margin: 0 0.5vw
 
+//Newsletter section styling
+
 #newsletter
   h2
     max-width: 80%
@@ -156,6 +174,8 @@ section
       border-radius: 3px
       border: 3px solid #cda34f
 
+//Blog post section styling
+
 #blog-posts
   aside
     margin: 5% 0
@@ -176,6 +196,8 @@ section
     img
       width: 100%
 
+//Sessions browser navigation
+
 #session-nav
   margin-top: 5vw
   h2
@@ -194,6 +216,8 @@ section
       font-weight: 300
       background: #cda34f
       margin: 0 0.5vw
+
+//Session browser styling
 
 #session-list
   display: flex
@@ -225,6 +249,8 @@ section
       background: white
     padding: 5%
 
+//Contact page styling
+
 #contact
   margin-bottom: 10%
   p
@@ -245,6 +271,8 @@ section
       font: unset
       text-transform: uppercase
       width: 50%
+
+//Blog page styling
 
 #blog
   display: flex
@@ -315,7 +343,9 @@ footer
     justify-content: space-around
     font-size: 5vw
 
-//Responsive styling
+//////////////RESPONSIVE STYLING//////////////////
+
+//iPhone 5 media query
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2)
   html
@@ -326,8 +356,10 @@ footer
       top: 20%
     p
       display: none
+  //Disable desktop menu
   #menu
     display: none
+  //Display mobile menu and styling
   #menu-mobile
     ul
       border-top: 1.5px solid rgba(0,0,0,0.2)
@@ -357,6 +389,7 @@ footer
       margin-top: 5px
       width: 70%
       padding: 70px
+  //Newsletter section styling
   #newsletter
     form
       margin-top: 50px
@@ -379,8 +412,8 @@ footer
       p
         font-size: 50px
         margin-bottom: 60px
+  //Footer section styling
   footer
-
     nav
       padding: 20px
       width: 90%
@@ -392,7 +425,7 @@ footer
     #social-icons-bar
       width: 70%
       font-size: 100px
-
+  //Session section navigation mobile styling
   #session-nav #choose-genre-container
     margin-top: 50px
     justify-content: space-around
@@ -403,6 +436,7 @@ footer
       width: 20vw
       flex-wrap: wrap
       text-align: center
+  //Session list styling
   #session-list
     display: flex
     flex-direction: column
@@ -423,7 +457,7 @@ footer
       justify-content: center
       box-sizing: border-box
       width: 100%
-
+  //Blog section styling
   #blog
     .blog-post
       aside
@@ -439,6 +473,7 @@ footer
           display: block
           padding: 50px
           width: 90%
+  //Contact section mobile styling
   #contact
     p
       margin: 10% 0
@@ -459,6 +494,7 @@ footer
         width: 100%
     p
       font-size: 50px
+  //Blog section blog post styling
   .article
     font-size: 40px
     article

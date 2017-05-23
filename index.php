@@ -1,25 +1,38 @@
 <?php
+
+  //Routing Setup
+
   require("vendor/autoload.php");
   require("php-include/db_init.php");
 
   $router = new AltoRouter();
 
+  //Mapping of Routes
+
   $router->map( 'GET', '/', function() {
     require('home.php');
   });
+
+  //Blog page mapping
 
   $router->map( 'GET', '/blog', function() {
     require('blog.php');
   });
 
+  //Contact page mapping
+
   $router->map( 'GET', '/contact', function() {
     require('contact.php');
   });
 
+  //Newsletter subscription mapping
 
   $router->map( 'POST', '/news-comfirm.php', function() {
     header('Location: news-comfirm.php');
   });
+
+  //Sessions page mapping
+
   $router->map( 'GET', '/sessions', function() {
     global $fpdo;
     global $query;
@@ -31,6 +44,8 @@
     require('sessions.php');
   });
 
+  //Select articles based on URL
+
   $router->map( 'GET', '/articles/[a:link]', function($link) {
     global $fpdo;
     global $query;
@@ -41,6 +56,8 @@
           ->where('articles.URL',$link);
     require('articles/article.php');
   });
+
+  //Select sessions based on genre - Routing logic
 
   $router->map( 'GET', '/[a:id]', function($id) {
     function prepareData ($genre) {
@@ -54,6 +71,9 @@
                       ->select('artists.name, sessions.subheadline, articles.URL, articles.ID, articles.imageURL');
       require('sessions.php');
     };
+
+    //Identify and assign genre
+
     switch ($id) {
     case 'pop':
         prepareData(1);

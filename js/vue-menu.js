@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#menu',
     data: {
+        //Menu items stored as JS objects
         leftSide: [
           {
             title: "home",

@@ -24,13 +24,21 @@
     $email = test_input($email);
     $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
+    //Setting up variables for mail function
+
     $to      = 'ioana@yourcozycorner.com';
     $subject = "${firstName} sent you a message";
     $headers = 'From: webmaster@yourcozycorner.com' . "\r\n" .
         'Reply-To: webmaster@example.com' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
+
+    //Start PHP session, that will enable to transfer a message to contact.php
+
     session_start();
     $_SESSION['sent'] = "true";
+
+    //Execute PHP e-mail function
+
     mail($to, $subject, $message, $headers);
 
     header("Location: contact.php");
