@@ -82,7 +82,10 @@ main {
     #menu ul li {
       color: black;
       display: inline-block;
-      text-transform: capitalize; }
+      text-transform: capitalize;
+      transition: all 250ms; }
+      #menu ul li:hover {
+        transform: scale(1.1); }
 
 section {
   margin-top: 5%;
@@ -118,7 +121,11 @@ section {
   width: 10vw;
   height: 3vw;
   text-align: center;
-  background: white; }
+  background: white;
+  transition: background 250ms; }
+  #recent-sessions a:hover {
+    color: white;
+    background: #cda34f; }
 #recent-sessions article {
   box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.4);
   margin: 5vw 0;
@@ -160,7 +167,12 @@ section {
     #newsletter form input[type="submit"] {
       background: white;
       border-radius: 3px;
-      border: 3px solid #cda34f; }
+      border: 3px solid #cda34f;
+      transition: all 250ms; }
+      #newsletter form input[type="submit"]:hover {
+        cursor: pointer;
+        color: white;
+        background: #cda34f; }
 
 #blog-posts aside {
   margin: 5% 0;
@@ -198,7 +210,11 @@ section {
       text-transform: uppercase;
       font-weight: 300;
       background: #cda34f;
-      margin: 0 0.5vw; }
+      margin: 0 0.5vw;
+      transition: all 250ms; }
+      #session-nav #choose-genre-container h5:hover {
+        background: white;
+        color: #cda34f; }
 
 #session-list {
   display: flex;
@@ -228,7 +244,11 @@ section {
       width: 10vw;
       height: 3vw;
       text-align: center;
-      background: white; }
+      background: white;
+      transition: background 250ms; }
+      #session-list .description a:hover {
+        color: white;
+        background: #cda34f; }
 
 #contact {
   margin-bottom: 10%; }
@@ -249,7 +269,15 @@ section {
       color: white;
       font: unset;
       text-transform: uppercase;
-      width: 50%; }
+      width: 50%;
+      cursor: pointer;
+      transition: background 300ms;
+      border: 3px solid white;
+      box-sizing: border-box; }
+      #contact form input[type="submit"]:hover {
+        border: 3px solid #cda34f;
+        color: #cda34f;
+        background: white; }
 
 #blog {
   display: flex;
@@ -280,7 +308,11 @@ section {
         width: 10vw;
         height: 3vw;
         text-align: center;
-        background: white; }
+        background: white;
+        transition: background 250ms; }
+        #blog .blog-post aside a:hover {
+          color: white;
+          background: #cda34f; }
 
 .article {
   display: flex;
@@ -313,12 +345,20 @@ footer {
     width: 40vw;
     display: flex;
     justify-content: space-between; }
+    footer #footer-nav li {
+      transition: all 250ms; }
+    footer #footer-nav li:hover {
+      transform: scale(1.1); }
   footer #social-icons-bar {
     margin: 3% 0;
     display: flex;
     width: 30%;
     justify-content: space-around;
     font-size: 5vw; }
+    footer #social-icons-bar i {
+      transition: all 250ms; }
+    footer #social-icons-bar i:hover {
+      transform: scale(1.1); }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   html {
