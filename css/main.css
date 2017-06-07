@@ -508,9 +508,11 @@ footer {
 
   .article {
     font-size: 40px; }
-    .article article p {
-      text-align: left;
-      width: 90%;
-      font-size: 40px; } }
+    .article article {
+      text-align: left; }
+      .article article p {
+        text-align: left;
+        width: 90%;
+        font-size: 40px; } }
 
 /*# sourceMappingURL=main.css.map */
